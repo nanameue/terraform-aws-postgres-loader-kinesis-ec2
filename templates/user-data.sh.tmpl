@@ -19,6 +19,8 @@ function get_instance_id() {
   curl --silent --location "http://169.254.169.254/latest/meta-data/instance-id/"
 }
 
+echo "127.0.0.1 $HOSTNAME" | sudo tee -a /etc/hosts
+
 install_docker_ce
 
 sudo mkdir -p $${CONFIG_DIR}
